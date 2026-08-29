@@ -1,0 +1,77 @@
+public class Medico {
+    private String nome;
+    private String crm;
+    private String telefone;
+    private String especialidade;
+    private String senha;
+
+    public Medico() {
+    }
+
+    public Medico(String nome, String crm, String telefone, String especialidade, String senha) throws Exception{
+        setNome(nome);
+        setCrm(crm);
+        setTelefone(telefone);
+        setEspecialidade(especialidade);
+        setSenha(senha);
+    }
+
+    public void acessar(){
+
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public void setCrm(String crm) throws Exception {
+        if(crm.isBlank() || crm.isEmpty()){
+            throw new Exception("Crm Obrigatório!!");
+        }
+
+        this.crm = crm;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) throws Exception{
+        if(senha.isBlank() || senha.isEmpty()){
+            throw new Exception("Senha Obrigatória!!");
+        }
+        this.senha = "*************";
+    }
+
+    public void mostrar(){
+        System.out.println("Nome: "+nome);
+        System.out.println("CRM: "+crm);
+        System.out.println("Tel: "+telefone);
+        System.out.println("Especialidade: "+especialidade);
+        System.out.println("senha: "+"*********");
+    }
+}
